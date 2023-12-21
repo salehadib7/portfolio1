@@ -8,9 +8,9 @@ const Hero = () => {
         <div className="i-left">
           <div className="i-left-wrapper">
             <h2 className="text-2xl md:text-4xl pb-3">Hello, My name is</h2>
-            <h1 className="font-bold text-5xl md:text-6xl">Saleh D. Adib</h1>
-            <div className="i-title">
-              <div className="i-title-wrapper">
+            <h1 className="font-bold text-5xl md:text-5xl lg:text-6xl my-2">Saleh D. Adib</h1>
+            <div className="i-title h-[50px]">
+              <div className="i-title-wrapper h-full">
                 <div className="i-title-item">Web Developer</div>
                 <div className="i-title-item">UI/UX Designer</div>
                 <div className="i-title-item">Photographer</div>
@@ -88,6 +88,7 @@ const Hero = () => {
             width={1440}
             alt="me"
             className="i-img z-1"
+            priority
           />
         </div>
       </div>

@@ -8,13 +8,19 @@ import { ThemeContext } from "@/app/context";
 const Contact = () => {
   const theme = useContext(ThemeContext);
   const darkMode = theme.state.darkMode;
-  const [done, setDone] = useState(false);
+  const [done, setdone] = useState(false);
+  const [result, setresult] = useState()
 
   function arigato() {
     setTimeout(() => {
-      setDone(false);
+      setdone(false);
     }, 3000);
-    return "Thank You";
+    if(result === "OK"){
+      return "Thanks Your Message Has Successfully Been Sent";
+    }else{
+      return result;
+    }
+
   }
 
   const formRef = useRef();
@@ -29,8 +35,8 @@ const Contact = () => {
       )
       .then(
         (result) => {
-          console.log(result.text);
-          setDone(true);
+          setresult(result.text);
+          setdone(true);
         },
         (error) => {
           console.log(error.text);
@@ -111,7 +117,7 @@ const Contact = () => {
               name="message"
             />
             <button>Submit</button>
-            <div>{done && arigato()}</div>
+            <div className="my-4">{done && arigato()}</div>
           </form>
         </div>
       </div>
